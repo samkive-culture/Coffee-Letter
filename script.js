@@ -2,11 +2,11 @@
 
   // 카운트, 맥스값 수정해야함
   const courses = [
-    { name: '신규 입사자 입문 교육', count: 49, max: 50 },
-    { name: '커피 베리에이션 교육', count: 32, max: 40 },
-    { name: '브루잉 교육',          count: 15, max: 20 },
-    { name: '커핑 초급 교육',       count: 30, max: 30 },
-    { name: '점장/세컨 교육',       count: 28, max: 30 },
+    { name: '신규 입사자 입문 교육', count: 59, max: 200 },
+    { name: '커피 베리에이션 교육', count: 38, max: 200 },
+    { name: '브루잉 교육',          count: 15, max: 200 },
+    { name: '커핑 초급 교육',       count: 31, max: 154 },
+    { name: '점장/세컨 교육',       count: 57, max: 155 },
     { name: '한성자동차 VIP 교육',  count: 30, max: 50 },
   ];
   const grid = document.getElementById('statGrid');
@@ -22,11 +22,11 @@
         <div class="stat-name">${c.name}</div>
         <div class="stat-count">
           <div class="stat-num">${c.count}<span class="stat-unit"> 명</span></div>
-          <div class="stat-pct" style="text-align:right">수료 완료</div>
+          <div class="stat-pct" style="text-align:right">수료 완료 (누계)</div>
         </div>
       </div>
       <div class="stat-bar-bg"><div class="stat-bar-fill" data-pct="${pct}" style="width:0%"></div></div>
-      <div class="stat-pct">${pct}% (정원 ${c.max}명)</div>
+      <div class="stat-pct">${pct}% (연 계획 인원 ${c.max}명)</div>
     `;
     grid.appendChild(card);
   });
