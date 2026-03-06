@@ -444,6 +444,7 @@ section {
       gap: 20px;
       margin: 40px 0;
       flex-wrap: wrap;
+      break-inside: avoid
     }
     .comparison-card {
       flex: 1;
@@ -707,3 +708,10 @@ section {
 .top-btn.visible { opacity: 1; pointer-events: auto; }
 .top-btn:hover { background: var(--red); color: var(--white); }
 
+/* pdf 추출이나 인쇄시 페이지 설정 */
+@media print {
+  .stat-card { break-inside: avoid; }
+  .section    { break-inside: avoid; }
+  /* 특정 요소 앞에서 강제로 새 페이지 시작 */
+  .page-break { break-before: page; }
+}
